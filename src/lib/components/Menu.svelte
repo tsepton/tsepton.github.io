@@ -23,6 +23,10 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		border-radius: 10px;
+		box-sizing: border-box;
+		padding: 1em;
+		background-color: #f0f0f0;
 	}
 
 	.profile-pic > .name {

@@ -1,30 +1,36 @@
 <script lang="ts">
 	import Menu from '$lib/components/Menu.svelte';
+	import { fly } from 'svelte/transition';
+
+	export let data;
 </script>
 
-<main>
-	<div class="menu-container">
-		<Menu></Menu>
-	</div>
+<div class="menu-container">
+	<Menu></Menu>
+</div>
 
-	<div class="content-container">
+{#key data.url}
+	<div
+		class="content-container"
+		in:fly={{ y: 50, duration: 200, delay: 200 }}
+		out:fly={{ y: 50, duration: 200 }}
+	>
 		<slot></slot>
 	</div>
-</main>
+{/key}
 
 <style>
-	main {
-		display: grid;
-		grid-template-columns: 1fr 4fr;
-		height: 100vh;
-	}
-
 	.menu-container {
-		background-color: #f0f0f0;
+		position: fixed;
+		padding: 1em;
 		height: 100%;
+		box-sizing: border-box;
+		width: 25vw;
 	}
 
 	.content-container {
 		height: 100%;
+		margin-left: 25vw;
+		padding: 1em;
 	}
 </style>
