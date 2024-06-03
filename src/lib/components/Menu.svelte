@@ -1,5 +1,10 @@
+<script>
+	import { page } from '$app/stores';
+	import innerWidth, { smallScreen } from '$lib/utils/windowSize';
+</script>
+
 <div class="menu">
-	<div class="profile-pic">
+	<div class="profile-pic" class:reduced={$smallScreen}>
 		<div class="picture-container">
 			<img src="me.jpg" alt="Profile picture" />
 		</div>
@@ -7,14 +12,16 @@
 		<p class="about-me">PhD Student @ unamur</p>
 	</div>
 
-	<div class="menu-item">
-		<a href="/">News</a>
-	</div>
-	<div class="menu-item">
-		<a href="/research">Research</a>
-	</div>
-	<div class="menu-item">
-		<a href="/photography">Photography</a>
+	<div class:reduced={$smallScreen}>
+		<div class="menu-item" class:reduced={$smallScreen}>
+			<a class:active={$page.url.pathname === '/'} href="/">News</a>
+		</div>
+		<div class="menu-item" class:reduced={$smallScreen}>
+			<a class:active={$page.url.pathname === '/research'} href="/research">Research</a>
+		</div>
+		<div class="menu-item" class:reduced={$smallScreen}>
+			<a class:active={$page.url.pathname === '/photography'} href="/photography">Photography</a>
+		</div>
 	</div>
 </div>
 
@@ -41,6 +48,12 @@
 		font-weight: 200;
 	}
 
+	.reduced {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
 	.menu-item {
 		padding: 10px;
 		border-bottom: 1px solid #e0e0e0;
@@ -54,8 +67,16 @@
 		color: #0070f3;
 	}
 
+	.active {
+		color: #0070f3 !important;
+	}
+
 	.menu-item:last-child {
 		border-bottom: none;
+	}
+
+	.menu-item.reduced {
+		border-bottom: none !important;
 	}
 
 	.profile-pic {
@@ -64,6 +85,10 @@
 		align-items: center;
 		border-bottom: 1px solid #e0e0e0;
 		padding: 2em;
+	}
+
+	.profile-pic.reduced {
+		border-bottom: none;
 	}
 
 	.picture-container {

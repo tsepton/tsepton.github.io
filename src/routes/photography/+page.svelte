@@ -1,4 +1,4 @@
 <script>
 </script>
 
-    <div>My photography</div>
+<div>My photography</div>
