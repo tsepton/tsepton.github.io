@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Lorem from '$lib/components/Lorem.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import { largeScreen } from '$lib/utils/windowSize';
@@ -64,13 +65,13 @@
 			<div class="list">
 				<h2>Education</h2>
 				<ul class="education-list">
-					<li>Master in Computer Science, 2022</li>
+					<li>Master in Computer Science, 2021</li>
 					<li>Bachelor in Computer Science, 2020</li>
 				</ul>
 			</div>
 		</div>
 
-		<div class="side-note">Almost forget, I also like <a href="/photography">photography</a>.</div>
+		<div class="side-note">Almost forget, I also like <a href="{base}/photography">photography</a>.</div>
 	</div>
 	<div
 		class="news-container"

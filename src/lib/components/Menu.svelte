@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import innerWidth, { smallScreen } from '$lib/utils/windowSize';
 </script>
@@ -6,7 +7,7 @@
 <div class="menu">
 	<div class="profile-pic" class:reduced={$smallScreen}>
 		<div class="picture-container">
-			<img src="me.jpg" alt="Profile picture" />
+			<img src="{base}/me.jpg" alt="Thibaut" />
 		</div>
 		<p class="name">Thibaut Septon</p>
 		<p class="about-me">Ph.D Candidate @ UNamur</p>
@@ -15,10 +16,10 @@
 
 	<div class:reduced={$smallScreen}>
 		<div class="menu-item" class:reduced={$smallScreen}>
-			<a class:active={$page.url.pathname === '/research'} href="/">Research</a>
+			<a class:active={$page.url.pathname === `${base}/research`} href="{base}/">Research</a>
 		</div>
 		<div class="menu-item" class:reduced={$smallScreen}>
-			<a class:active={$page.url.pathname === '/photography'} href="/photography">Photography</a>
+			<a class:active={$page.url.pathname === `${base}/photography`} href="{base}/photography">Photography</a>
 		</div>
 	</div>
 </div>
