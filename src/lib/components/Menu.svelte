@@ -9,7 +9,7 @@
 			<img src="me.jpg" alt="Profile picture" />
 		</div>
 		<p class="name">Thibaut Septon</p>
-		<p class="about-me">Ph.D Student @ UNamur</p>
+		<p class="about-me">Ph.D Candidate @ UNamur</p>
 		<p class="mail">thibaut.septon@unamur.be</p>
 	</div>
 
