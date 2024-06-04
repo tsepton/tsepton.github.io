@@ -119,14 +119,7 @@
 		min-width: fit-content;
 	}
 
-	h1 {
-		font-size: 2em;
-		font-weight: 300;
-	}
-
 	h2 {
-		font-size: 1.5em;
-		font-weight: 300;
 		padding-bottom: 0;
 	}
 
