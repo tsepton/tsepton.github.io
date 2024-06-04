@@ -82,7 +82,9 @@
 	.menu-item a {
 		text-decoration: none;
 		color: #000;
+		transition: all 0.2s linear;
 	}
+
 	.menu-item a:hover {
 		color: #0070f3;
 	}
