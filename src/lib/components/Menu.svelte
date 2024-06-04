@@ -12,14 +12,27 @@
 		<p class="name">Thibaut Septon</p>
 		<p class="about-me">Ph.D Candidate @ UNamur</p>
 		<p class="mail">thibaut.septon@unamur.be</p>
+		<div class="contact-logo-containers">
+			<a href="https://github.com/tsepton/" target="_blank">
+				<img class="logo" src="{base}/github.svg" alt="github logo" />
+			</a>
+			<a href="https://gitlab.com/tsepton" target="_blank">
+				<img class="logo" src="{base}/gitlab.svg" alt="gitlab logo" />
+			</a>
+			<a href="https://www.linkedin.com/in/thibaut-septon-b425041a2/" target="_blank">
+				<img class="logo" src="{base}/linkedin.svg" alt="linkedin logo" />
+			</a>
+		</div>
 	</div>
 
 	<div class:reduced={$smallScreen}>
 		<div class="menu-item" class:reduced={$smallScreen}>
-			<a class:active={$page.url.pathname === `${base}/research`} href="{base}/">Research</a>
+			<a class:active={$page.url.pathname === `${base}/`} href="{base}/">Research</a>
 		</div>
 		<div class="menu-item" class:reduced={$smallScreen}>
-			<a class:active={$page.url.pathname === `${base}/photography`} href="{base}/photography">Photography</a>
+			<a class:active={$page.url.pathname === `${base}/photography`} href="{base}/photography">
+				Photography
+			</a>
 		</div>
 	</div>
 </div>
@@ -99,8 +112,8 @@
 	}
 
 	.picture-container {
-		width: 100px;
-		height: 100px;
+		width: 8em;
+		height: 8em;
 		border-radius: 50%;
 		overflow: hidden;
 		filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
@@ -110,5 +123,20 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	.contact-logo-containers {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 100%;
+		max-width: 8em;
+		margin-top: 0.8em;
+	}
+
+	.contact-logo-containers > a > .logo {
+		width: 1.5em;
+		height: 1.5em;
+		margin-right: 0.5em;
 	}
 </style>
