@@ -84,7 +84,7 @@
 	.news-container {
 		position: relative;
 		width: 100%;
-		min-width: 25em;
+		max-width: 100%;
 		height: 100%;
 		max-height: 100vh;
 		box-sizing: border-box;
@@ -92,5 +92,6 @@
 
 	.news-container.larger {
 		max-width: 28em;
+		min-width: 25em;
 	}
 </style>
