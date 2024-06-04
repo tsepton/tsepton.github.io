@@ -9,7 +9,8 @@
 			<img src="me.jpg" alt="Profile picture" />
 		</div>
 		<p class="name">Thibaut Septon</p>
-		<p class="about-me">PhD Student @ unamur</p>
+		<p class="about-me">Ph.D Student @ UNamur</p>
+		<p class="mail">thibaut.septon@unamur.be</p>
 	</div>
 
 	<div class:reduced={$smallScreen}>
@@ -42,7 +43,15 @@
 
 	.profile-pic > .about-me {
 		font-size: 0.8em;
-		font-weight: 200;
+		font-weight: 300;
+		margin-bottom: 0.3em;
+	}
+
+	.profile-pic > .mail {
+		font-size: 0.8em;
+		font-weight: 300;
+		margin-top: 0;
+		padding-top: 0;
 	}
 
 	.reduced {
