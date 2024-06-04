@@ -20,7 +20,7 @@
 	<div
 		class="content-container"
 		class:reduced={$smallScreen}
-		in:fly={{ y: 50, duration: 200, delay: 200 }}
+		in:fly={{ y: 50, duration: 200, delay: 300 }}
 		out:fly={{ y: 50, duration: 200 }}
 	>
 		<slot></slot>
@@ -45,7 +45,7 @@
 		height: 100%;
 		margin-left: 18.5em;
 		padding: 1em;
-		max-width: 40em;
+		box-sizing: border-box;
 	}
 
 	.content-container.reduced {
