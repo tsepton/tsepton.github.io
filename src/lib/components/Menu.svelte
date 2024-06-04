@@ -14,10 +14,7 @@
 
 	<div class:reduced={$smallScreen}>
 		<div class="menu-item" class:reduced={$smallScreen}>
-			<a class:active={$page.url.pathname === '/'} href="/">News</a>
-		</div>
-		<div class="menu-item" class:reduced={$smallScreen}>
-			<a class:active={$page.url.pathname === '/research'} href="/research">Research</a>
+			<a class:active={$page.url.pathname === '/research'} href="/">Research</a>
 		</div>
 		<div class="menu-item" class:reduced={$smallScreen}>
 			<a class:active={$page.url.pathname === '/photography'} href="/photography">Photography</a>
