@@ -10,7 +10,7 @@
 			date: new Date('5 June 2024 UTC'),
 			authors: 'Septon, T., Villarreal Narvaez, S., Devroey, X. & Dumas, B.',
 			description:
-				'Our paper titled "Exploiting Semantic Search and Object-Oriented Programming to Ease Multimodal Interface Development" was accepted at EICS 24\''
+				'Our LBR titled "Exploiting Semantic Search and Object-Oriented Programming to Ease Multimodal Interface Development" was accepted at EICS 24\''
 		},
 		{
 			date: new Date('21 August 2023 UTC'),
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 
-		<div class="side-note">Almost forget, I also like <a href="{base}/photography">photography</a>.</div>
+		<div class="side-note">Almost forgot, I also like <a href="{base}/photography">photography</a>.</div>
 	</div>
 	<div
 		class="news-container"
