@@ -17,3 +17,7 @@ h2 {
 	font-size: 1.5em;
 	font-weight: 300;
 }
+
+.debug {
+	border: 1px solid red;
+}
