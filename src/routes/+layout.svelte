@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Menu from '$lib/components/Menu.svelte';
 	import windowSize, { smallScreen } from '$lib/utils/windowSize.js';
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 
 	export let data;
@@ -8,6 +9,10 @@
 	let innerWidth: number;
 
 	$: windowSize.set(innerWidth);
+
+	onMount(() => {
+		windowSize.set(innerWidth);
+	});
 </script>
 
 <svelte:window bind:innerWidth />
