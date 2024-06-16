@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { smallScreen } from '$lib/utils/windowSize';
 	import { useViewportScroll, useTransform, Motion } from 'svelte-motion';
 
 	export let images: string[];
@@ -7,6 +8,7 @@
 
 	const { scrollYProgress } = useViewportScroll();
 
+	// FIXME: smallscreen will have an overlap
 	const translateFirst = useTransform(scrollYProgress, [0, 1], [0, 0]);
 	const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 100]);
 	const translateThird = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -18,7 +20,7 @@
 	const thirdPart = images.slice(2 * third);
 </script>
 
-<div class="{className} gallery">
+<div class="{className} gallery {$smallScreen ? 'reduced' : ''}">
 	<div class="column">
 		{#each firstPart as el}
 			<Motion let:motion style={{ y: translateFirst }}>
@@ -65,5 +67,9 @@
 	img {
 		width: 100%;
 		height: auto;
+	}
+
+	.reduced {
+		flex-wrap: wrap !important;
 	}
 </style>
