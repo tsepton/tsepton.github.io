@@ -9,15 +9,25 @@
 	const { scrollYProgress } = useViewportScroll();
 
 	// FIXME: smallscreen will have an overlap
-	const translateFirst = useTransform(scrollYProgress, [0, 1], [0, 0]);
+	const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -100]);
 	const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 100]);
 	const translateThird = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
 	const third = Math.ceil(images.length / 3);
 
-	const firstPart = images.slice(0, third);
-	const secondPart = images.slice(third, 2 * third);
-	const thirdPart = images.slice(2 * third);
+	let firstPart: string[] = [];
+	let secondPart: string[] = [];
+	let thirdPart: string[] = [];
+
+	$: if(!$smallScreen) {
+		firstPart = images.slice(0, third);
+		secondPart = images.slice(third, 2 * third);
+		thirdPart = images.slice(2 * third);
+	} else {
+		firstPart = images;
+		secondPart = [];
+		thirdPart = [];
+	} 
 </script>
 
 <div class="{className} gallery {$smallScreen ? 'reduced' : ''}">
