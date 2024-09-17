@@ -7,6 +7,12 @@
 
 	const events: { description: string; date: Date; authors?: string }[] = [
 		{
+			date: new Date('27 June 2024 UTC'),
+			authors: 'Corbugy, S & Septon, T. & Dumas, B., Frénay, B',
+			description:
+				'Our paper titled "Insight-SNE: Understanding t-SNE Embeddings through Interactive Explanation" was accepted at ESANN 24\''
+		},
+		{
 			date: new Date('5 June 2024 UTC'),
 			authors: 'Septon, T., Villarreal Narvaez, S., Devroey, X. & Dumas, B.',
 			description:
@@ -14,7 +20,7 @@
 		},
 		{
 			date: new Date('21 August 2023 UTC'),
-			authors: 'Cauz, M., Septon, T. & Dumas, B.',
+			authors: 'Septon, T. & Cauz, M. & Dumas, B.',
 			description:
 				'Our poster titled "Extending the World-in-Miniature Metaphor to Access Situated Information in a Pervasive Augmented Reality Environment" was accepted at ISMAR 23\''
 		},
