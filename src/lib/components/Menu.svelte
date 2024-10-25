@@ -35,6 +35,14 @@
 			</a>
 		</div>
 	</div>
+
+	{#if !$smallScreen}
+		<div class="easter-eggs">
+			<a href="https://tsepton.github.io/life" target="_blank">
+				<img class="logo easter-egg-logo" src="{base}/life.svg" alt="Conway's game of life" />
+			</a>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -140,5 +148,19 @@
 		width: 1.5em;
 		height: 1.5em;
 		margin-right: 0.5em;
+	}
+
+	.easter-eggs {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: end;
+	}
+
+	.easter-egg-logo {
+		width: 1.5em;
+		height: 1.5em;
+		opacity: 0.3;
 	}
 </style>
