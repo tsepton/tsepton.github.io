@@ -35,7 +35,7 @@
 		{#each firstPart as el}
 			<Motion let:motion style={{ y: translateFirst }}>
 				<div use:motion>
-					<img src={`${base}${el}`} alt="thumbnail" />
+					<img src={`${base}${el}`} alt="thumbnail" loading="lazy" />
 				</div>
 			</Motion>
 		{/each}
@@ -44,7 +44,7 @@
 		{#each secondPart as el}
 			<Motion let:motion style={{ y: translateSecond }}>
 				<div use:motion>
-					<img src={`${base}${el}`} alt="thumbnail" />
+					<img src={`${base}${el}`} alt="thumbnail" loading="lazy"/>
 				</div>
 			</Motion>
 		{/each}
@@ -53,7 +53,7 @@
 		{#each thirdPart as el}
 			<Motion let:motion style={{ y: translateThird }}>
 				<div use:motion>
-					<img src={`${base}${el}`} alt="thumbnail" />
+					<img src={`${base}${el}`} alt="thumbnail" loading="lazy"/>
 				</div>
 			</Motion>
 		{/each}

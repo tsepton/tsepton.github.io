@@ -3,11 +3,11 @@
 	import ParallaxScroll from '$lib/components/ParallaxScroll.svelte';
 
 
-	const imageModules: Record<string, () => Promise<any>> = import.meta.glob('/static/photo/*');
+	const imageModules: Record<string, () => Promise<any>> = import.meta.glob('/src/photo/*');
 
 	const data: Promise<string[]>= Promise.all(
 		Object.keys(imageModules).map((modulePath) =>
-			imageModules[modulePath]().then(({ default: imageUrl }) => imageUrl.replace('/static', ''))
+			imageModules[modulePath]().then((x) => x.default)
 		)
 	)
 </script>
