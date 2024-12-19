@@ -1,23 +1,12 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import ParallaxScroll from '$lib/components/ParallaxScroll.svelte';
 
-
-	const imageModules: Record<string, () => Promise<any>> = import.meta.glob('/src/photo/*');
-
-	const data: Promise<string[]>= Promise.all(
-		Object.keys(imageModules).map((modulePath) =>
-			imageModules[modulePath]().then((x) => x.default)
-		)
-	)
+	const imageModules: Record<string, { default: string }> = import.meta.glob('/src/lib/photo/*', {
+		eager: true
+	});
+	const data: string[] = Object.entries(imageModules).flatMap((x) => x[0]);
 </script>
 
 <h1>Photography</h1>
 
-{#await data}
-	<p>Loading...</p>
-{:then data}
-	<ParallaxScroll images={data} />
-{:catch error}
-	<p style="color: red">{error.message}</p>
-{/await}
+<ParallaxScroll images={data} />

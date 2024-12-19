@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { smallScreen } from '$lib/utils/windowSize';
 	import { useViewportScroll, useTransform, Motion } from 'svelte-motion';
+	import ImageLoader from './ImageLoader.svelte';
 
 	export let images: string[];
 	export let className: string | undefined = undefined;
@@ -19,7 +20,7 @@
 	let secondPart: string[] = [];
 	let thirdPart: string[] = [];
 
-	$: if(!$smallScreen) {
+	$: if (!$smallScreen) {
 		firstPart = images.slice(0, third);
 		secondPart = images.slice(third, 2 * third);
 		thirdPart = images.slice(2 * third);
@@ -27,15 +28,15 @@
 		firstPart = images;
 		secondPart = [];
 		thirdPart = [];
-	} 
+	}
 </script>
 
 <div class="{className} gallery {$smallScreen ? 'reduced' : ''}">
 	<div class="column">
 		{#each firstPart as el}
 			<Motion let:motion style={{ y: translateFirst }}>
-				<div use:motion>
-					<img src={`${base}${el}`} alt="thumbnail" loading="lazy" />
+				<div use:motion class="image-container">
+					<ImageLoader src={`${base}${el}`} />
 				</div>
 			</Motion>
 		{/each}
@@ -43,8 +44,8 @@
 	<div class="column">
 		{#each secondPart as el}
 			<Motion let:motion style={{ y: translateSecond }}>
-				<div use:motion>
-					<img src={`${base}${el}`} alt="thumbnail" loading="lazy"/>
+				<div use:motion class="image-container">
+					<ImageLoader src={`${base}${el}`} />
 				</div>
 			</Motion>
 		{/each}
@@ -52,8 +53,8 @@
 	<div class="column">
 		{#each thirdPart as el}
 			<Motion let:motion style={{ y: translateThird }}>
-				<div use:motion>
-					<img src={`${base}${el}`} alt="thumbnail" loading="lazy"/>
+				<div use:motion class="image-container">
+					<ImageLoader src={`${base}${el}`} />
 				</div>
 			</Motion>
 		{/each}
@@ -73,13 +74,11 @@
 		margin: 1em;
 		width: 100%;
 	}
-
-	img {
-		width: 100%;
-		height: auto;
-	}
-
 	.reduced {
 		flex-wrap: wrap !important;
+	}
+
+	.image-container {
+		margin: 0.2em;
 	}
 </style>
