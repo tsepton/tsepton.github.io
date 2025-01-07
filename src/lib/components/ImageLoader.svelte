@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Skeleton from './Skeleton.svelte';
-
 	export let src: string | undefined;
 
 	let loading = true;
@@ -27,6 +25,7 @@
 	.skeleton {
 		width: 100%;
 		height: 100%;
+		min-height: 25rem; /* FIXME - temporary fix for now */
 
 		background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
 		background-size: 200% 100%;
