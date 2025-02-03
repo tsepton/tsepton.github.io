@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let events: { description: string; date: Date; authors?: string }[];
+	export let events: { description: string; date: Date; authors?: string; repository?: string }[];
 </script>
 
 <div class="container">
@@ -12,6 +12,11 @@
 				<p>{event.description}</p>
 				{#if !!event.authors}
 					<h5>Authors: {event.authors}</h5>
+				{/if}
+				{#if !!event.repository}
+					<h6>
+						<a href={event.repository} target="_blank">See repository</a>
+					</h6>
 				{/if}
 			</div>
 		{/each}
@@ -60,11 +65,16 @@
 		border-radius: 10px;
 	}
 
-	.cards .card h4 {
+	.cards .card h4,
+	.cards .card h6 {
 		font-weight: 500;
 		padding-bottom: 0.5em;
 		margin-left: 1.5em;
 		font-size: small;
+	}
+
+	.cards .card h6 {
+		margin-top: 0.5em;
 	}
 
 	.cards .card p {

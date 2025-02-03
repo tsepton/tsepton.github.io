@@ -4,22 +4,25 @@
 	import { largeScreen } from '$lib/utils/windowSize';
 	import { fly } from 'svelte/transition';
 
-	const events: { description: string; date: Date; authors?: string }[] = [
+	const events: { description: string; date: Date; authors?: string, repository?: string }[] = [
 		{
-			date: new Date('31 January 2024 UTC'),
+			date: new Date('31 January 2025 UTC'),
 			authors: 'Thibaut Septon, Théo Leclercq, & Bruno Dumas',
+			repository: 'https://github.com/tsepton/VOICE',
 			description:
-				'Our demo titled " Leveraging Pronoun Disambiguation in Multimodal Interaction for Contextual Understanding of Voice Assistant Queries" was accepted at IUI 25\''
+				'Our demo titled "Leveraging Pronoun Disambiguation in Multimodal Interaction for Contextual Understanding of Voice Assistant Queries" was accepted at IUI 25\''
 		},
 		{
 			date: new Date('27 June 2024 UTC'),
 			authors: 'Sacha Corbugy, Thibaut Septon, Bruno Dumas, Benoit Frénay',
+			repository: "https://github.com/sady410/tsne_interactive_explanation",
 			description:
 				'Our paper titled "Insight-SNE: Understanding t-SNE Embeddings through Interactive Explanation" was accepted at ESANN 24\''
 		},
 		{
 			date: new Date('5 June 2024 UTC'),
-			authors: 'Thibaut Septon, Santiago Villarreal Narvaez, Xavier Devroey & Bruno Dumas',
+			authors: 'Thibaut Septon, Santiago Villarreal Narvaez, Xavier Devroey & Bruno Dumas',		
+			repository: 'https://github.com/tsepton/ummi',
 			description:
 				'Our LBR titled "Exploiting Semantic Search and Object-Oriented Programming to Ease Multimodal Interface Development" was accepted at EICS 24\''
 		},
