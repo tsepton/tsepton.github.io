@@ -1,32 +1,37 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Lorem from '$lib/components/Lorem.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import { largeScreen } from '$lib/utils/windowSize';
 	import { fly } from 'svelte/transition';
 
 	const events: { description: string; date: Date; authors?: string }[] = [
 		{
+			date: new Date('31 January 2024 UTC'),
+			authors: 'Thibaut Septon, Théo Leclercq, & Bruno Dumas',
+			description:
+				'Our demo titled " Leveraging Pronoun Disambiguation in Multimodal Interaction for Contextual Understanding of Voice Assistant Queries" was accepted at IUI 25\''
+		},
+		{
 			date: new Date('27 June 2024 UTC'),
-			authors: 'Corbugy, S & Septon, T. & Dumas, B., Frénay, B',
+			authors: 'Sacha Corbugy, Thibaut Septon, Bruno Dumas, Benoit Frénay',
 			description:
 				'Our paper titled "Insight-SNE: Understanding t-SNE Embeddings through Interactive Explanation" was accepted at ESANN 24\''
 		},
 		{
 			date: new Date('5 June 2024 UTC'),
-			authors: 'Septon, T., Villarreal Narvaez, S., Devroey, X. & Dumas, B.',
+			authors: 'Thibaut Septon, Santiago Villarreal Narvaez, Xavier Devroey & Bruno Dumas',
 			description:
 				'Our LBR titled "Exploiting Semantic Search and Object-Oriented Programming to Ease Multimodal Interface Development" was accepted at EICS 24\''
 		},
 		{
 			date: new Date('21 August 2023 UTC'),
-			authors: 'Septon, T. & Cauz, M. & Dumas, B.',
+			authors: 'Thibaut Septon, Maxime Cauz & Bruno Dumas',
 			description:
 				'Our poster titled "Extending the World-in-Miniature Metaphor to Access Situated Information in a Pervasive Augmented Reality Environment" was accepted at ISMAR 23\''
 		},
 		{
 			date: new Date('29 May 2023 UTC'),
-			authors: 'Cauz, M., Septon, T. & Dumas, B.',
+			authors: 'Maxime Cauz, Thibaut Septon & Bruno Dumas',
 			description:
 				'Our LBR titled "Interaction Techniques to Control Information Clutter in a Pervasive Augmented Reality Scenario" was accepted at HCII 23\''
 		},
@@ -77,7 +82,9 @@
 			</div>
 		</div>
 
-		<div class="side-note">Almost forgot, I also like <a href="{base}/photography">photography</a>.</div>
+		<div class="side-note">
+			Almost forgot, I also like <a href="{base}/photography">photography</a>.
+		</div>
 	</div>
 	<div
 		class="news-container"
