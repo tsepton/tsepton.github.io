@@ -49,7 +49,6 @@
 	.content-container {
 		height: 100%;
 		margin-left: 18.5em;
-		padding: 1em;
 		box-sizing: border-box;
 	}
 

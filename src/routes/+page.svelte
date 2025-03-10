@@ -4,7 +4,7 @@
 	import { largeScreen } from '$lib/utils/windowSize';
 	import { fly } from 'svelte/transition';
 
-	const events: { description: string; date: Date; authors?: string, repository?: string }[] = [
+	const events: { description: string; date: Date; authors?: string; repository?: string }[] = [
 		{
 			date: new Date('31 January 2025 UTC'),
 			authors: 'Thibaut Septon, Théo Leclercq, & Bruno Dumas',
@@ -15,13 +15,13 @@
 		{
 			date: new Date('27 June 2024 UTC'),
 			authors: 'Sacha Corbugy, Thibaut Septon, Bruno Dumas, Benoit Frénay',
-			repository: "https://github.com/sady410/tsne_interactive_explanation",
+			repository: 'https://github.com/sady410/tsne_interactive_explanation',
 			description:
 				'Our paper titled "Insight-SNE: Understanding t-SNE Embeddings through Interactive Explanation" was accepted at ESANN 24\''
 		},
 		{
 			date: new Date('5 June 2024 UTC'),
-			authors: 'Thibaut Septon, Santiago Villarreal Narvaez, Xavier Devroey & Bruno Dumas',		
+			authors: 'Thibaut Septon, Santiago Villarreal Narvaez, Xavier Devroey & Bruno Dumas',
 			repository: 'https://github.com/tsepton/ummi',
 			description:
 				'Our LBR titled "Exploiting Semantic Search and Object-Oriented Programming to Ease Multimodal Interface Development" was accepted at EICS 24\''
@@ -46,7 +46,7 @@
 </script>
 
 <div class="container" class:larger={!$largeScreen}>
-	<div class="presentation-container">
+	<div class="presentation-container" class:larger={!$largeScreen}>
 		<h1>About me</h1>
 
 		<p>Hi! Welcome to this homepage.</p>
@@ -103,7 +103,7 @@
 	.container {
 		display: flex;
 		flex-direction: row;
-		gap: 2.5em;
+		gap: 10px;
 		flex-wrap: wrap;
 		height: 100%;
 	}
@@ -114,6 +114,10 @@
 
 	.container.larger {
 		flex-wrap: nowrap;
+		overflow: hidden !important;
+		height: 100vh;
+		max-height: 100vh;
+		overflow: hidden;
 	}
 
 	.presentation-container {
@@ -121,19 +125,26 @@
 		flex-direction: column;
 		text-align: justify;
 		max-width: 50em;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.presentation-container.larger {
+		max-height: 100vh;
+		overflow-y: scroll;
+		padding: 1rem;
 	}
 
 	.lists-container {
 		display: flex;
 		flex-direction: row;
 		gap: 0.8em;
-		padding-top: 0.8em;
-		flex-wrap: wrap;
+		padding: 0.8em;
 	}
-
 	.lists-container .list {
 		flex: 1;
-		min-width: fit-content;
+		width: fit-content;
+		max-width: 100%;
 	}
 
 	h2 {
@@ -145,13 +156,17 @@
 		width: 100%;
 		max-width: 100%;
 		height: 100%;
-		max-height: 100vh;
 		box-sizing: border-box;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	.news-container.larger {
 		max-width: 28em;
 		min-width: 25em;
+		max-height: 100vh;
+		overflow-y: scroll;
+		padding-top: 1rem;
 	}
 
 	.side-note {
