@@ -31,7 +31,7 @@
 
 	.container {
 		display: flex;
-		height: 100%;
+		height: max-content;
 	}
 
 	.line {
