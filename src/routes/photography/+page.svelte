@@ -8,10 +8,19 @@
 	);
 </script>
 
-<h1>Photography</h1>
-
-{#await data then data}
+<div class="photo-container">
+	<h1>Photography</h1>
+	
+	{#await data then data}
 	<ParallaxScroll images={data} />
-{:catch error}
+	{:catch error}
 	<p style="color: red">{error.message}</p>
-{/await}
+	{/await}
+</div>
+
+<style>
+	.photo-container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+</style>
