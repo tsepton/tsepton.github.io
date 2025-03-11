@@ -5,28 +5,39 @@
 	import { onMount } from 'svelte';
 
 	let menuOffset: number = 0;
-
-	const offset = (scrollPx: number) => {
-		return $smallScreen ? Math.max(0, scrollPx - 330) : 0;
-	};
+	let pictureOffset: number = 0;
+	let pictureSize: string = '8em';
+	let opacity: string = '0';
 
 	onMount(() => {
-		const callback = () =>{
-			menuOffset = offset(window.scrollY)
+		const callback = () => {
+			if (!$smallScreen) {
+				menuOffset = 0;
+				pictureOffset = 0;
+				pictureSize = '8em';
+				opacity = '0';
+			} else {
+				menuOffset = $smallScreen ? Math.max(0, window.scrollY - 300) : 0;
+				pictureOffset = $smallScreen ? Math.min(270, window.scrollY) : 0;
+				pictureSize = `${Math.max(6, 8 - window.scrollY / 100)}em`;
+				opacity = `${Math.min(0.5, window.scrollY / 600)}`;
+			}
 		};
 		window.addEventListener('scroll', callback);
 		return () => window.removeEventListener('scroll', callback);
 	});
-
 </script>
 
 <div
 	class="menu"
 	class:menu-reduced={$smallScreen}
-	style="transform: translate(0, {menuOffset}px);"
+	style="transform: translate(0, {menuOffset}px); filter: drop-shadow(0 0 2px rgba(0, 0, 0, {opacity}));"
 >
 	<div class="profile-pic" class:reduced={$smallScreen}>
-		<div class="picture-container">
+		<div
+			class="picture-container"
+			style="transform: translate(0, {pictureOffset}px); width: {pictureSize}; height: {pictureSize}; filter: drop-shadow(0 0 2px rgba(0, 0, 0, {opacity}));"
+		>
 			<img src="{base}/me.jpg" alt="Thibaut" />
 		</div>
 		<p class="name">Thibaut Septon</p>
@@ -150,11 +161,8 @@
 	}
 
 	.picture-container {
-		width: 8em;
-		height: 8em;
 		border-radius: 50%;
 		overflow: hidden;
-		filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
 	}
 
 	.picture-container > img {
