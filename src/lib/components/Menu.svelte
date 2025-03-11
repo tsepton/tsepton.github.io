@@ -159,8 +159,8 @@
 	}
 
 	.easter-egg-logo {
-		width: 1.5em;
-		height: 1.5em;
+		width: 1em !important;
+		height: 1em !important;
 		opacity: 0.3;
 	}
 </style>
