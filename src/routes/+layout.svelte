@@ -52,6 +52,6 @@
 	}
 	
 	.content-container.enlarged {
-		margin-left: 18.5em;
+		margin-left: 19em;
 	}
 </style>
