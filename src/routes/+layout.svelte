@@ -17,14 +17,14 @@
 
 <svelte:window bind:innerWidth />
 
-<div class="menu-container" class:reduced={$smallScreen}>
+<div class="menu-container" class:enlarged={!$smallScreen}>
 	<Menu></Menu>
 </div>
 
 {#key data.url}
 	<div
 		class="content-container"
-		class:reduced={$smallScreen}
+		class:enlarged={!$smallScreen}
 		in:fly={{ y: 50, duration: 200, delay: 300 }}
 		out:fly={{ y: 50, duration: 200 }}
 	>
@@ -34,25 +34,24 @@
 
 <style>
 	.menu-container {
-		position: fixed;
-		padding: 1em;
+		position: relative;
 		height: 100%;
 		box-sizing: border-box;
-		width: 18.5em;
-	}
-
-	.menu-container.reduced {
-		position: relative;
 		width: 100%;
+	}
+	
+	.menu-container.enlarged {
+		position: fixed;
+		width: 18.5em;
 	}
 
 	.content-container {
 		height: 100%;
-		margin-left: 18.5em;
+		margin-left: 0;
 		box-sizing: border-box;
 	}
-
-	.content-container.reduced {
-		margin-left: 0;
+	
+	.content-container.enlarged {
+		margin-left: 18.5em;
 	}
 </style>
