@@ -1,11 +1,48 @@
-<script>
+<script lang="ts">
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
-	import innerWidth, { smallScreen } from '$lib/utils/windowSize';
+	import { smallScreen, largeScreen } from '$lib/utils/windowSize';
+	import { afterUpdate, beforeUpdate, onDestroy, onMount } from 'svelte';
+
+	let menu: HTMLElement;
+	let placeholder: HTMLElement;
+	let pic: HTMLElement;
+
+	const handleResizeAndScroll = () => {
+		// FIXME : When scrolled a bit, if user changes to another section
+		// the scroll is reset to the top
+
+		if (!menu || !placeholder) return;
+		console.log(`${menu.clientHeight}px`)
+		if (!$smallScreen && menu.style.top !== '0px') {
+			menu.style.top = '0px';
+		} else {
+			const scrollY = window.scrollY;
+			menu.style.top = `${Math.max(-scrollY, -330)}px`;
+		}
+		placeholder.style.height = `${menu.clientHeight}px`;
+	};
+
+	onMount(() => {
+		window.addEventListener('scroll', handleResizeAndScroll);
+		window.setInterval(handleResizeAndScroll, 0); // FIXME - cant get my head around this
+		return () => window.removeEventListener('scroll', handleResizeAndScroll);
+	});
+
+	$: menu?.clientHeight, $smallScreen, handleResizeAndScroll();
 </script>
 
-<div class="menu">
-	<div class="profile-pic" class:reduced={$smallScreen}>
+<div
+	bind:this={placeholder}
+	class="menu-placeholder"
+	class:placeholder-reduced={$smallScreen}
+></div>
+<div
+	bind:this={menu}
+	class="menu"
+	class:menu-reduced={$smallScreen}
+>
+	<div bind:this={pic} class="profile-pic" class:reduced={$smallScreen}>
 		<div class="picture-container">
 			<img src="{base}/me.jpg" alt="Thibaut" />
 		</div>
@@ -49,11 +86,30 @@
 	.menu {
 		display: flex;
 		flex-direction: column;
+		width: 18.5em;
 		height: 100%;
-		border-radius: 10px;
 		box-sizing: border-box;
 		padding: 1em;
 		background-color: #f0f0f0;
+	}
+
+	.menu-reduced {
+		position: fixed;
+		width: 100%;
+		height: fit-content;
+		z-index: 100;
+		background-color: #f0f0f0;
+	}
+
+	.menu-placeholder {
+		display: none;
+		height: 0px;
+	}
+
+	.menu-placeholder.placeholder-reduced {
+		z-index: -100;
+		display: block;
+		width: 18.5em;
 	}
 
 	.profile-pic > .name {
