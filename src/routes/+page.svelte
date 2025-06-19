@@ -6,6 +6,12 @@
 
 	const events: { description: string; date: Date; authors?: string; repository?: string }[] = [
 		{
+			date: new Date('23 April 2025 UTC'),
+			authors: 'Santiago Villarreal Narvaez, Thibaut Septon & Bruno Dumas',
+			description:
+				'Our LBR titled "Designing Touch-Based Gestures for Thigh-Worn Wearable Device in Passenger-Focused Vehicular XR Environments" was accepted at EICS 25\''
+		},
+		{
 			date: new Date('31 January 2025 UTC'),
 			authors: 'Thibaut Septon, Théo Leclercq, & Bruno Dumas',
 			repository: 'https://github.com/tsepton/VOICE',
