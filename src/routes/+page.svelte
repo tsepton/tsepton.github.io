@@ -6,10 +6,22 @@
 
 	const events: { description: string; date: Date; authors?: string; repository?: string }[] = [
 		{
+			date: new Date('11 July 2025 UTC'),
+			authors: 'Robin Ghyselinck, Thibaut Septon, Nicolas Geuens, Margaux Mannaerts, Julie Vijghen, Samy Lachkar, Benoît Frénay & Bruno Dumas',
+			description:
+				'Our paper titled "Computer Assisted Diagnosis: does it make sense for Lungs Tumor Detection? A Qualitative study with Pulmonologists" was accepted at IHM 25\''
+		},
+		{
 			date: new Date('23 April 2025 UTC'),
 			authors: 'Santiago Villarreal Narvaez, Thibaut Septon & Bruno Dumas',
 			description:
 				'Our LBR titled "Designing Touch-Based Gestures for Thigh-Worn Wearable Device in Passenger-Focused Vehicular XR Environments" was accepted at EICS 25\''
+		},
+		{
+			date: new Date('10 March 2025 UTC'),
+			authors: 'Maxime Cauz, Elise Hallaert, Thibaut Septon, Théo Leclercq & Bruno Dumas',
+			description:
+				'Our workshop proposal titled "Identifier et comprendre les enjeux de la Réalité Augmentée Permanente" was accepted at IHM 25\''
 		},
 		{
 			date: new Date('31 January 2025 UTC'),
