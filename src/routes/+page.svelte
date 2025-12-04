@@ -150,7 +150,7 @@
 	.presentation-container.larger {
 		max-height: 100vh;
 		overflow-y: scroll;
-		padding: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.lists-container {

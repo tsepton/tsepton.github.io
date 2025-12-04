@@ -71,7 +71,6 @@
 	.column {
 		display: flex;
 		flex-direction: column;
-		margin: 1em;
 		width: 100%;
 	}
 	.reduced {
