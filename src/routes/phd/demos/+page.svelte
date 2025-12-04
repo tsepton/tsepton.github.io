@@ -18,7 +18,7 @@
 		<div class="video-item" class:larger={!$largeScreen}>
 			WiM prototype
 			<video controls>
-				<source src={`${base}/videos/phd-demo-wim.mp4`} type="video/mp4" />
+				<source src={`${base}/videos/phd-demo-wim.webm`} type="video/webm" />
 				Your browser does not support the video tag.
 			</video>
 		</div>
@@ -26,14 +26,14 @@
 		<div class="video-item" class:larger={!$largeScreen}>
 			VOICE
 			<video controls>
-				<source src={`${base}/videos/phd-demo-voice.mp4`} type="video/mp4" />
+				<source src={`${base}/videos/phd-demo-voice.webm`} type="video/webm" />
 				Your browser does not support the video tag.
 			</video>
 		</div>
 		<div class="video-item" class:larger={!$largeScreen}>
 			ThighTouchI
 			<video controls>
-				<source src={`${base}/videos/phd-demo-thightouchi.mp4`} type="video/mp4" />
+				<source src={`${base}/videos/phd-demo-thightouchi.webm`} type="video/webm" />
 				Your browser does not support the video tag.
 			</video>
 		</div>
