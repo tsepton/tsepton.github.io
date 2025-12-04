@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import ParallaxScroll from '$lib/components/ParallaxScroll.svelte';
 	import { largeScreen } from '$lib/utils/windowSize';
 
