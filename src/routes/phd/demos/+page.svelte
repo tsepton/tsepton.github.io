@@ -5,18 +5,32 @@
 </script>
 
 <div class="main">
-	<h1>Ph.D complementary resources</h1>
+	<h1>Ph.D Complementary Resources</h1>
 
 	<h2>Document</h2>
-	<div style="padding: 1rem;">Will be uploaded soon.</div>
+	<div style="">Will be uploaded when reviewed.</div>
 
-	<h2>Repositories</h2>
-	<div style="padding: 1rem;">List of all GitLab and GitHub repositories. Will be uploaded soon.</div>
+	<h2>Repositories and reproduction packages</h2>
+	<div style="">
+		Most publications have associated open source repositories, this is the case for the
+		<a href="https://github.com/tsepton/ummi" target="_blank" rel="noopener noreferrer"
+			>Ummi development tool</a
+		>
+		(and its associated
+		<a href="https://github.com/tsepton/ummi_usability" target="_blank" rel="noopener noreferrer"
+			>reproduction package</a
+		>), the
+		<a href="https://github.com/tsepton/voice" target="_blank" rel="noopener noreferrer">VOICE</a>
+		system, and the
+		<a href="https://github.com/tsepton/ThighTouchI" target="_blank" rel="noopener noreferrer"
+			>ThighTouchI</a
+		> system.
+	</div>
 
 	<h2>Videos</h2>
 	<div class="videos-container" class:larger={!$largeScreen}>
 		<div class="video-item" class:larger={!$largeScreen}>
-			WiM prototype
+			<span class="video-title"> WiM prototype </span>
 			<video controls>
 				<source src={`${base}/videos/phd-demo-wim.webm`} type="video/webm" />
 				Your browser does not support the video tag.
@@ -24,14 +38,14 @@
 		</div>
 
 		<div class="video-item" class:larger={!$largeScreen}>
-			VOICE
+			<span class="video-title">VOICE</span>
 			<video controls>
 				<source src={`${base}/videos/phd-demo-voice.webm`} type="video/webm" />
 				Your browser does not support the video tag.
 			</video>
 		</div>
 		<div class="video-item" class:larger={!$largeScreen}>
-			ThighTouchI
+			<span class="video-title"> ThighTouchI</span>
 			<video controls>
 				<source src={`${base}/videos/phd-demo-thightouchi.webm`} type="video/webm" />
 				Your browser does not support the video tag.
@@ -54,6 +68,10 @@
 	.video-item {
 		font-weight: 200;
 		margin-right: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75em;
+		margin-bottom: 2em;
 	}
 	.video-item.larger {
 		width: 25vw;
